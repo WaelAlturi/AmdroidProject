@@ -10,9 +10,7 @@ import java.util.List;
 public class Handler {
     public static List<Market> ParseResults(String content) throws JSONException {
 
-        JSONObject obj = new JSONObject(content);
-
-        JSONArray array = obj.getJSONArray(content);
+        JSONArray array = new JSONArray(content);
 
         List<Market> items = new ArrayList<>();
 
