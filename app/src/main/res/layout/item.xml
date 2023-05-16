@@ -9,12 +9,10 @@
 
         <ImageView
             android:id="@+id/image"
-            android:layout_width="match_parent"
+            android:layout_width="303dp"
             android:layout_height="250sp"
             android:background="@color/black"
-            android:src="@drawable/ic_launcher_foreground"
-            android:layout_constraintStart_toStartOf="parent"
-            android:layout_constraintTop_toTopOf="parent" />
+            android:src="@drawable/ic_launcher_foreground" />
 
         <TextView
             android:id="@+id/title"

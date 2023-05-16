@@ -8,8 +8,8 @@
 
 <!--    Sort Data-->
     <GridView
-        android:id="@+id/pokemon_gv"
-        android:numColumns="1"
+        android:id="@+id/market_gv"
+        android:numColumns="2"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

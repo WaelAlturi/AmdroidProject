@@ -15,11 +15,11 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class MarketAdapter extends ArrayAdapter<Handler> {
-    private ArrayList<Handler> handlerList;
+public class MarketAdapter extends ArrayAdapter<Market> {
+    private ArrayList<Market> handlerList;
     Context context;
 
-    public MarketAdapter(ArrayList<Handler> data , Context context){
+    public MarketAdapter(ArrayList<Market> data , Context context){
         super(context,R.layout.item,data);
         this.handlerList = data;
         this.context = context;
