@@ -12,7 +12,7 @@ public class Handler {
 
         JSONObject obj = new JSONObject(content);
 
-        JSONArray array = obj.getJSONArray("data");
+        JSONArray array = obj.getJSONArray(content);
 
         List<Market> items = new ArrayList<>();
 
