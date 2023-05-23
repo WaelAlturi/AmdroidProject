@@ -1,12 +1,16 @@
 package com.example.androidprojectversion;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,7 +19,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class MarketAdapter extends ArrayAdapter<Market> {
+public  class MarketAdapter extends ArrayAdapter<Market> {
     private ArrayList<Market> handlerList;
     Context context;
 
@@ -25,13 +29,16 @@ public class MarketAdapter extends ArrayAdapter<Market> {
         this.context = context;
     }
 
+
     private static class ViewHolder {
         TextView title,price;
         ImageView image;
+        Button info;
     }
 
     @NonNull
     @Override
+
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
 
@@ -48,6 +55,9 @@ public class MarketAdapter extends ArrayAdapter<Market> {
             viewHolder.title = convertView.findViewById(R.id.title);
             viewHolder.price = convertView.findViewById(R.id.price);
             viewHolder.image = convertView.findViewById(R.id.image);
+            viewHolder.info = convertView.findViewById(R.id.info);
+
+
 
             convertView.setTag(viewHolder);
 

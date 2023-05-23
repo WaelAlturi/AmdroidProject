@@ -29,7 +29,14 @@
             android:textAlignment="center"
             android:textSize="18sp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/info"
+            android:text="Info"
+            android:layout_marginTop="20sp"
+            android:backgroundTint="#647C78"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
