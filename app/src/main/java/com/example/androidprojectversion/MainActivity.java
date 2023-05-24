@@ -5,10 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.nfc.Tag;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Layout;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.Toast;
@@ -33,9 +36,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         RequestData requestData = new RequestData();
         requestData.execute("https://fakestoreapi.com/products");
+    }
+    public void ShowInfo(){
+        try {
+            market_gv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(getApplicationContext(),"Clicked",Toast.LENGTH_LONG).show();
+                }
+            });
+        }catch (Exception e){
+            Log.e("ERROR",e.toString());
+        }
 
     }
-
 
     private class RequestData extends AsyncTask<String,String,String> {
 

@@ -3,6 +3,7 @@ package com.example.androidprojectversion;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,9 +67,30 @@ public  class MarketAdapter extends ArrayAdapter<Market> {
         }
 
         viewHolder.title.setText(market.getTitle());
-        viewHolder.price.setText(market.getPrice());
+        viewHolder.price.setText(market.getPrice()+"$");
+        viewHolder.info.setText(market.getId());
         Picasso.get().load(market.getImage()).into(viewHolder.image);
+
+        viewHolder.info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    viewHolder.info.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(view.getContext(),Product.class);
+                            view.getContext().startActivity(intent);
+                            Toast.makeText(getContext().getApplicationContext(),"Clicked",Toast.LENGTH_LONG).show();
+                        }
+                    });
+                }catch (Exception e){
+                    Log.e("ERROR",e.toString());
+                }
+            }
+        });
+
 
         return convertView;
     }
+
 }
