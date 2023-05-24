@@ -37,20 +37,6 @@ public class MainActivity extends AppCompatActivity {
         RequestData requestData = new RequestData();
         requestData.execute("https://fakestoreapi.com/products");
     }
-    public void ShowInfo(){
-        try {
-            market_gv.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Toast.makeText(getApplicationContext(),"Clicked",Toast.LENGTH_LONG).show();
-                }
-            });
-        }catch (Exception e){
-            Log.e("ERROR",e.toString());
-        }
-
-    }
-
     private class RequestData extends AsyncTask<String,String,String> {
 
         @Override

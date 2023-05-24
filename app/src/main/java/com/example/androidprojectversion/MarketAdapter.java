@@ -68,7 +68,7 @@ public  class MarketAdapter extends ArrayAdapter<Market> {
 
         viewHolder.title.setText(market.getTitle());
         viewHolder.price.setText(market.getPrice()+"$");
-        viewHolder.info.setText(market.getId());
+        //viewHolder.info.setText(market.getId());
         Picasso.get().load(market.getImage()).into(viewHolder.image);
 
         viewHolder.info.setOnClickListener(new View.OnClickListener() {
@@ -78,7 +78,11 @@ public  class MarketAdapter extends ArrayAdapter<Market> {
                     viewHolder.info.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
+
                             Intent intent = new Intent(view.getContext(),Product.class);
+                            intent.putExtra("Title",market.getTitle());
+                            intent.putExtra("Price",viewHolder.price.getText());
+                            intent.putExtra("Image",market.getImage());
                             view.getContext().startActivity(intent);
                             Toast.makeText(getContext().getApplicationContext(),"Clicked",Toast.LENGTH_LONG).show();
                         }
