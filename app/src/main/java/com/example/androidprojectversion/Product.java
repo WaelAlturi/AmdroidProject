@@ -27,23 +27,16 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.HashMap;
 import java.util.Map;
 
-
 public class Product extends AppCompatActivity {
 
     private FirebaseFirestore database = FirebaseFirestore.getInstance();
-
-    private static final String KEY_PRODUCT_ID= "ID";
-    private static final String KEY_PRODUCT_NAME = "Title";
-    private static final String KEY_PRODUCT_PRICE = "Price";
-    //private static final String KEY_PRODUCT_DESCRIPTION = "Info";
-    private static final String KEY_PRODUCT_IMAGE= "Image";
 
     String titleData;
     String priceData;
     String ID;
     String ImageData;
 
-    EditText document_ID;
+    String SelectedDocumentID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,69 +45,36 @@ public class Product extends AppCompatActivity {
         titleData = getIntent().getStringExtra("Title");
         priceData = getIntent().getStringExtra("Price");
         ImageData = getIntent().getStringExtra("Image");
-        document_ID = findViewById(R.id.document_ID);
         ID = getIntent().getStringExtra("ID");
+        getAllUsers();
 
 
 
-
-
-        Button addData = findViewById(R.id.addData);
-        addData.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                addDataToFirebase();
-                //Toast.makeText(getApplication(),"Clicked",Toast.LENGTH_LONG).show();
-            }
-        });
         Button deleteData = findViewById(R.id.deleteData);
         deleteData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
-                    deleteProduct(document_ID.getText().toString());
-                    getAllUsers();
+                    deleteProduct(SelectedDocumentID);
                 }catch (Exception e){
                     Toast.makeText(Product.this,e.toString(),Toast.LENGTH_LONG).show();
                 }
+                getAllUsers();
             }
         });
         Button info = findViewById(R.id.showInfo);
         info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getAllUsers();
+               // getAllUsers();
             }
         });
     }
-    private void addDataToFirebase() {
 
-        Map<String,Object> data = new HashMap<>();
-        data.put(KEY_PRODUCT_ID,ID);
-        data.put(KEY_PRODUCT_NAME,titleData);
-        data.put(KEY_PRODUCT_PRICE,priceData);
-        data.put(KEY_PRODUCT_IMAGE,ImageData);
-
-        database
-                .collection("product")
-                .add(data)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        System.out.println(documentReference.getId());
-                        Toast.makeText(getApplicationContext(),"Product Created!!",Toast.LENGTH_LONG).show();
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getApplicationContext(),"Error"+e,Toast.LENGTH_LONG).show();
-                    }
-                });
-    }
     private void deleteProduct(String dID) {
 
         database.collection("product").document(dID).delete();
+
     }
     public void getAllUsers() {
         database.collection("product")
@@ -134,7 +94,7 @@ public class Product extends AppCompatActivity {
                             mySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                 @Override
                                 public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                                    document_ID.setText(mySpinner.getSelectedItem().toString());
+                                    SelectedDocumentID = mySpinner.getSelectedItem().toString();
                                 }
 
                                 @Override

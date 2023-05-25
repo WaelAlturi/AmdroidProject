@@ -31,9 +31,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <Button
-            android:id="@+id/info"
-            android:text="Info"
+            android:id="@+id/add"
+            android:text="Add To Database"
             android:layout_marginTop="20sp"
+            android:backgroundTint="#647C78"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/database"
+            android:text="DataBase Value"
             android:backgroundTint="#647C78"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>

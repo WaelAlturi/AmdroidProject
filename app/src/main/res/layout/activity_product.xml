@@ -9,23 +9,13 @@
     tools:context=".Product">
 
     <Button
-        android:id="@+id/addData"
-        android:backgroundTint="#94D3D2"
-        android:text="Add Data"
-        android:layout_width="match_parent"
-        android:layout_height="50sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        />
-    <Button
         android:id="@+id/deleteData"
         android:backgroundTint="#94D3D2"
         android:text="Delete Data"
         android:layout_width="match_parent"
         android:layout_height="50sp"
         android:layout_marginTop="20sp"
-        app:layout_constraintTop_toBottomOf="@+id/document_ID"
+        app:layout_constraintTop_toBottomOf="@+id/document_Spinner"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         />
@@ -40,21 +30,13 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         />
-    <EditText
-        android:id="@+id/document_ID"
-        android:layout_width="match_parent"
-        android:layout_height="75sp"
-        android:hint="Enter Document ID :\nafter click on Show info you can copy Document ID)"
-        android:textSize="15sp"
-        app:layout_constraintTop_toBottomOf="@+id/addData"
-        />
+
     <Spinner
         android:id="@+id/document_Spinner"
         android:layout_width="match_parent"
         android:layout_height="50sp"
         android:layout_marginTop="20sp"
-
-        app:layout_constraintTop_toBottomOf="@+id/showInfo"
+        app:layout_constraintTop_toTopOf="parent"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
