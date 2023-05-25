@@ -83,6 +83,7 @@ public  class MarketAdapter extends ArrayAdapter<Market> {
                             intent.putExtra("Title",market.getTitle());
                             intent.putExtra("Price",viewHolder.price.getText());
                             intent.putExtra("Image",market.getImage());
+                            intent.putExtra("ID",market.getId());
                             view.getContext().startActivity(intent);
                             Toast.makeText(getContext().getApplicationContext(),"Clicked",Toast.LENGTH_LONG).show();
                         }
