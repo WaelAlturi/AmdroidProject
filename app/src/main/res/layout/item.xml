@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:background="@drawable/background"
     android:layout_height="match_parent">
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -11,12 +13,13 @@
             android:id="@+id/image"
             android:layout_width="match_parent"
             android:layout_height="250sp"
-            android:background="@color/black"
+            android:background="@drawable/background"
             android:src="@drawable/ic_launcher_foreground" />
 
         <TextView
             android:id="@+id/title"
             android:text="Title"
+            android:textColor="#BEDDEC"
             android:layout_marginTop="5sp"
             android:textAlignment="center"
             android:textSize="20sp"
@@ -24,6 +27,7 @@
             android:layout_height="wrap_content" />
         <TextView
             android:id="@+id/price"
+            android:textColor="#BEDDEC"
             android:text="price"
             android:layout_marginTop="5sp"
             android:textAlignment="center"
@@ -32,15 +36,17 @@
             android:layout_height="wrap_content"/>
         <Button
             android:id="@+id/add"
+            android:textColor="#BEDDEC"
             android:text="Add To Database"
             android:layout_marginTop="20sp"
-            android:backgroundTint="#647C78"
+            android:backgroundTint="#4B5678"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <Button
             android:id="@+id/database"
+            android:textColor="#BEDDEC"
             android:text="DataBase Value"
-            android:backgroundTint="#647C78"
+            android:backgroundTint="#4B5678"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </LinearLayout>

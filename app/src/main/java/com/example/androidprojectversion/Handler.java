@@ -22,7 +22,7 @@ public class Handler {
                     data.getString("title"),
                     data.getString("image"),
                     data.getString("price"),
-                    data.getString("id"));
+                    data.getString("description"));
             items.add(market);
         }
         return items;

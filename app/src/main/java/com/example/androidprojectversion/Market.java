@@ -27,20 +27,20 @@ public class Market {
         this.price = price;
     }
 
-    public String getId() {
-        return id;
+    public String getInfo() {
+        return info;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setInfo(String id) {
+        this.info = id;
     }
 
-    private String id;
+    private String info;
 
-    public Market(String title, String image, String price, String id) {
+    public Market(String title, String image, String price, String info) {
         this.title = title;
         this.image = image;
         this.price = price;
-        this.id = id;
+        this.info = info;
     }
 }

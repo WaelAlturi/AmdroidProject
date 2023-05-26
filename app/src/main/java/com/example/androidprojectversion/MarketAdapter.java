@@ -31,10 +31,9 @@ public  class MarketAdapter extends ArrayAdapter<Market> {
     Context context;
     private FirebaseFirestore database = FirebaseFirestore.getInstance();
 
-    private static final String KEY_PRODUCT_ID= "ID";
     private static final String KEY_PRODUCT_NAME = "Title";
     private static final String KEY_PRODUCT_PRICE = "Price";
-    //private static final String KEY_PRODUCT_DESCRIPTION = "Info";
+    private static final String KEY_PRODUCT_DESCRIPTION = "Info";
     private static final String KEY_PRODUCT_IMAGE= "Image";
 
     public MarketAdapter(ArrayList<Market> data , Context context){
@@ -86,7 +85,7 @@ public  class MarketAdapter extends ArrayAdapter<Market> {
             public void onClick(View view) {
                 try {
                     Map<String, Object> data = new HashMap<>();
-                    data.put(KEY_PRODUCT_ID, market.getId());
+                    data.put(KEY_PRODUCT_DESCRIPTION, market.getInfo());
                     data.put(KEY_PRODUCT_NAME, market.getTitle());
                     data.put(KEY_PRODUCT_PRICE, viewHolder.price.getText());
                     data.put(KEY_PRODUCT_IMAGE, market.getImage());
@@ -118,7 +117,7 @@ public  class MarketAdapter extends ArrayAdapter<Market> {
                 intent.putExtra("Title",market.getTitle());
                 intent.putExtra("Price",viewHolder.price.getText());
                 intent.putExtra("Image",market.getImage());
-                intent.putExtra("ID",market.getId());
+                intent.putExtra("Info",market.getInfo());
                 view.getContext().startActivity(intent);
             }
         });
